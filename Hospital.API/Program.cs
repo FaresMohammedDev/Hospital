@@ -15,11 +15,15 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 var connection = builder.Configuration.GetConnectionString("HospitalDB");
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connection));
+
 builder.Services.AddScoped<IDoctorRepo, DoctorRepo>();
 builder.Services.AddScoped<IPatientRepo, PatientRepo>();
 builder.Services.AddScoped<ITreatmentRepo, TreatmentRepo>();
-builder.Services.AddScoped(typeof(IGenericRepo<>), (typeof(IGenericRepo<>)));
+builder.Services.AddScoped(typeof(IGenericRepo<>), (typeof(GenericRepo<>)));
+
 builder.Services.AddScoped<IDoctorService, DoctorService>();
+builder.Services.AddScoped<IPatientService, PatientService>();
+builder.Services.AddScoped<ITreatmentService, TreatmentService>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

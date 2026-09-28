@@ -8,7 +8,6 @@ namespace Hospital.BL.DTOs.Patient
 {
     public record UpdatePatientDto
     {
-        public int Id { get; set; }
         public string Name { get; set; } = string.Empty;
         public string Illness { get; set; } = string.Empty;
         public DateOnly Birthday { get; set; }

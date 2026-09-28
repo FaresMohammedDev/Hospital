@@ -14,7 +14,7 @@ namespace Hospital.DAL.Repository.Implementation
         private readonly ApplicationDbContext _context;
         public PatientRepo(ApplicationDbContext context) : base(context)
         {
-              
+              _context = context;
         }
     }
 }

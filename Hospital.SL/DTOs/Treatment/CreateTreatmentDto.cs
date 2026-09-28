@@ -9,7 +9,7 @@ namespace Hospital.BL.DTOs.Treatment
 {
     public record CreateTreatmentDto
     {
-        public DateTime DateTime { get; set; }
+        public DateTime TreatmentDateTime { get; set; }
         public int PatientId { get; set; }
         public int DoctorId { get; set; }
     }
