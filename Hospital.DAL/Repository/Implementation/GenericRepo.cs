@@ -15,7 +15,7 @@ namespace Hospital.DAL.Repository.Implementation
 
         public GenericRepo(ApplicationDbContext context)
         {
-            _context = context;
+            _context = context; 
             _dbSet = _context.Set<T>();
         }
         public Task CreateAsync(T entity)
